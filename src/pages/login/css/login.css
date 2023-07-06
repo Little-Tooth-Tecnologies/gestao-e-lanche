@@ -1,7 +1,7 @@
 .Modal{
     width: 50rem;
     height: 30rem; 
-    margin-top: 7rem;
+    margin-top: 5.5rem;
 
     border-radius: 1.1875rem;
     background: var(--modal, linear-gradient(0deg, rgba(146, 219, 127, 0.43) 0%, rgba(146, 219, 127, 0.43) 100%), rgba(60, 76, 59, 0.85));
@@ -36,6 +36,10 @@
     margin-bottom: 7rem;
 }
 
+.danger::placeholder{
+    color: aliceblue;
+}
+
 .inputUser{
     display: flex;
     flex-direction: row;
@@ -44,6 +48,11 @@
 }
 .inputUser>input{
     padding-left: 2rem;
+    transition: 0.5s;
+}
+
+.inputUser>input:focus{
+    padding-left: 2.2rem;    
 }
 
 .icone{
@@ -63,16 +72,23 @@
 
 .inputSenha>input{
     padding-left: 2rem;
+    transition: 0.5s;
+}
+
+.inputSenha>input:focus{
+    padding-left: 2.2rem;    
 }
 
 .password{
     font-size: 1rem;        
     padding-top: 1rem;
-    text-decoration-line: underline;    
+    text-decoration-line: underline;
+    transition: 0.5s; 
 }
 
 .password:hover{
     color: #ffffff;
+    font-size: 1.05rem;
 }
 
 .fotoModal{    
@@ -85,7 +101,7 @@
 
 /* Btn */
 .btnBG{background-color: #C4D7B2; transition: 0.5s;}
-.btnBG:hover{background-color: #D6FCB2; color: #3C4C3B;}
+.btnBG:hover{background-color: #D6FCB2; color: #3C4C3B; scale: 1.1;}
 
 /* Cores */
 .neutra{color: #E1ECC8;}
