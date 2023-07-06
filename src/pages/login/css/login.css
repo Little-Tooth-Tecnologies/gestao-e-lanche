@@ -1,0 +1,93 @@
+.Modal{
+    width: 50rem;
+    height: 30rem; 
+    margin-top: 7rem;
+
+    border-radius: 1.1875rem;
+    background: var(--modal, linear-gradient(0deg, rgba(146, 219, 127, 0.43) 0%, rgba(146, 219, 127, 0.43) 100%), rgba(60, 76, 59, 0.85));
+    box-shadow: 11px 14px 4px -3px rgba(0, 0, 0, 0.55);
+}
+
+.linhaDetalhe{    
+    background-color: #FFFFFF;
+    opacity: 1;
+    border: none;
+    height: 0.2rem;
+}
+
+.acima{color: #FFFFFF;}
+
+.sectionColuna{
+    display: flex;
+    justify-content: space-around;       
+}
+
+.FormCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    width: 50%;    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    margin-bottom: 7rem;
+}
+
+.inputUser{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    
+}
+.inputUser>input{
+    padding-left: 2rem;
+}
+
+.icone{
+    font-size: 1.5rem;
+    position: absolute;
+    margin: 0.4rem;
+    color: #3C4C3B;
+    opacity: 0.8;
+}
+
+
+.inputSenha{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.inputSenha>input{
+    padding-left: 2rem;
+}
+
+.password{
+    font-size: 1rem;        
+    padding-top: 1rem;
+    text-decoration-line: underline;    
+}
+
+.password:hover{
+    color: #ffffff;
+}
+
+.fotoModal{    
+    height: 30rem;
+    width: 26.4rem;    
+    margin-left: -0.9rem;
+    margin-right: 3rem;
+    border: none;
+}
+
+/* Btn */
+.btnBG{background-color: #C4D7B2; transition: 0.5s;}
+.btnBG:hover{background-color: #D6FCB2; color: #3C4C3B;}
+
+/* Cores */
+.neutra{color: #E1ECC8;}
+.menu{background-color: #A0C49D;}
+.text{background-color: 1E1E1E;}

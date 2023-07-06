@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&family=Roboto:ital,wght@0,400;1,100&display=swap');
+
+*{
+    transition: 0.5s;
+}
+
+body{
+    background-image: url('./png/bg.png');
+    background-size: cover;
+}
+
+.titulo{font-family: "Raleway" , sans-serif;}
+.subtitulo{font-family: 'Roboto', sans-serif;}
+.paragrafo{font-family: 'Roboto Flex', sans-serif;}
