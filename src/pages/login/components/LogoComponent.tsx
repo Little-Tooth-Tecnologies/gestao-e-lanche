@@ -1,7 +1,7 @@
 import '../css/login.css'
 
 function LogoComponent() {
-const modalDetail = './png/bgIcon.png'  
+const modalDetail = './png/bgIcon.png'
 
 return (
     <article className="fotoModal">        
