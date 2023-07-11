@@ -26,20 +26,20 @@ export function LoginUtils(){
         }
 
         if(user === "admin" && password === "admin"){
+            setShowDialog(true)
             setFormSuccess(true)
             setFormError(false)
-            setShowDialog(true)
             
         }else{
+            setShowDialog(true)
             setFormSuccess(false)
             setFormError(true)
-            setShowDialog(true)
         }
 
         if ( password === "" ){
+            setShowDialog(true)
             setFormSuccess(false)
             setFormError(true)
-            setShowDialog(true)
         }
 
         console.log(data)

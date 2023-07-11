@@ -1,24 +1,21 @@
 import { Toast } from "react-bootstrap";
 import { ToastContainer } from "react-bootstrap";
-import { LoginUtils } from "../utils/LoginUtils.ts"
 
-
-function ErrorPopup() {    
-
-    const {formSuccess, showDialog, setShowDialog} = LoginUtils();
-    
-    return (
-    <ToastContainer position="top-center" style={{ zIndex: 1 , padding: 10}}>
-        <Toast bg='danger' show={formSuccess}>
-            <Toast.Body>
-                <h5 className="text-light">Atenção!!</h5>                
-                {formSuccess === false ? 
-                (<span className="text-light">Usuário ou senha incorretos</span>)
-                : 
-                (<span className="text-light"> Logado! </span>)}
-            </Toast.Body>
-        </Toast>
-    </ToastContainer>
+function ErrorPopup(props: any) {        
+    return (    
+        <ToastContainer position="top-center" style={{ zIndex: 1 , padding: 10}}>
+            <Toast bg={props.formSuccess? 'success' : 'danger'}  show={props.showDialog} delay={150} autohide>
+                <Toast.Header>
+                    <strong className="me-auto">Aviso</strong>
+                </Toast.Header>
+                <Toast.Body>                           
+                    {props.formSuccess === false ? 
+                    (<span className="text-light">Usuário ou senha incorretos</span>)
+                    : 
+                    (<span className="text-light"> Usuário {props.user} Logado! </span>)}                    
+                </Toast.Body>
+            </Toast>
+        </ToastContainer>    
     )
 }
 

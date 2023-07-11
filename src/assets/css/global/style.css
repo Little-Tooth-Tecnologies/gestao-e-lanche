@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&family=Roboto:ital,wght@0,400;1,100&display=swap');
 
 *{
+    margin: 0;
+    padding: 0;
     transition: 0.5s;
 }
 
 body{
     background-image: url('./png/bg.png');
-    background-size: cover;
+    background-size: cover;    
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    body{
+        background-size: 150vh;
+    }
+}
+
+#corpo{
+    display: flex;
+    justify-content: space-around;
+    /* height: 100vh; */
 }
 
 .titulo{font-family: "Raleway" , sans-serif;}
