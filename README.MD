@@ -34,3 +34,5 @@ Cálculo de preços 🧮💲: O sistema poderáter regras de negócio para calcu
 Restrições de entrega 📍🚫: O sistema poderá ter regras para definir áreas de entrega e horários disponíveis, garantindo que os pedidos sejam atendidos apenas dentro desses limites.
 
 Este sistema de gerenciamento para pequenos negócios e delivery's proporcionará uma plataforma completa e eficiente para a gestão de operações diárias, desde o controle de estoque até o gerenciamento de pedidos e entregas. Com a implementação de regras de negócio personalizáveis, autenticação segura e tokenização, os usuários poderão ter uma experiência confiável e eficaz no gerenciamento de seus negócios. 💼📈📦🚀
+
+Back end do Projeto : [Gestão & Lanche Back End](https://github.com/pedrohkunz/gestao-e-lanche-API)
