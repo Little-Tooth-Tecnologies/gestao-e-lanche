@@ -8,7 +8,7 @@ export function LoginUtils(){
 
     const [formSuccess, setFormSuccess] = React.useState(false);
     const [formError, setFormError] = React.useState(false);
-    const [showDialog, setShowDialog] = React.useState(false);
+    const [showDialog, setShowDialog] = React.useState(false);    
      
     const handleUserChange = (e : React.ChangeEvent<HTMLInputElement>): void => {
         setUser(e.target.value)
@@ -55,7 +55,7 @@ export function LoginUtils(){
         formSuccess,
         showDialog,
         formError,
-        setShowDialog,
+        setShowDialog,        
         handleUserChange,
         handlePasswordChange,
         sendUserData
