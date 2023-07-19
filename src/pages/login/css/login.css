@@ -77,43 +77,48 @@
     color: aliceblue;
 }
 
-.inputUser{
+.input{
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;    
     
 }
-.inputUser>input{
+
+.inputCenter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem; 
+}
+
+.input>input{
     padding-left: 2rem;
     transition: 0.5s;
 }
 
-.inputUser>input:focus{
-    padding-left: 2.2rem;    
+.inputsDivs{
+    display: flex;
+    flex-direction: column;    
 }
+
+.inputArticle{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.input>input:focus::placeholder{
+    transform: translateX(0.5rem);
+    transition: 0.5s;
+}
+
 
 .icone{
     font-size: 1.5rem;
     position: absolute;
     margin: 0.4rem;
     color: #3C4C3B;
-    opacity: 0.8;
-}
-
-
-.inputSenha{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1rem;
-}
-
-.inputSenha>input{
-    padding-left: 2rem;
-    transition: 0.5s;
-}
-
-.inputSenha>input:focus{
-    padding-left: 2.2rem;
+    opacity: 0.6;
 }
 
 .password{
@@ -144,12 +149,47 @@
 .RowIcons{
     display: flex;
     flex-direction: row;
-    gap: 0.2rem;
+    gap: 0.5rem;    
+}
+
+.RowIconsV{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: 0rem;    
+    margin-bottom: 1rem;
+    gap: 0.5rem;   
 }
 
 .icon{
+    font-size: 1.5rem;        
+    color: #ffffff;    
+}
+
+.icon:hover{
+    scale: 1.2;
+}
+
+.iconV{
     font-size: 1.5rem;
-    color: #FFFFFF;    
+    position: absolute;
+    margin: 0.4rem;
+    color: #3C4C3B;
+    opacity: 0.6;
+}
+
+.modalLink{    
+    color: #FFFFFF;
+    border: none;
+    text-decoration: underline;
+    transition: 0.5s;
+    margin-left: 0.3rem;    
+}
+.modalLink:hover{
+    color: #D6FCB2;   
+    cursor: pointer;
+    font-size: 0.98rem;
 }
 
 /* Btn */
@@ -168,5 +208,6 @@
     background-color: #E1ECC8;
     border-radius: 0.5rem;
 }
+
 .menu{background-color: #A0C49D;}
 .text{background-color: 1E1E1E;}

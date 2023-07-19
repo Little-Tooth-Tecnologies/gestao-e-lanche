@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Login from '../pages/login/Login.tsx'
 import Register from '../pages/register/Register.tsx'
+import EsqueciSenha from '../pages/register/EsqueciSenha.tsx'
 
 import Index from "../Index.tsx";
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         {
             path: '/Cadastro',
             element: <Register/>,
+        },
+        {
+            path: '/EsqueciSenha',
+            element: <EsqueciSenha/>
         }
     ]
 }
