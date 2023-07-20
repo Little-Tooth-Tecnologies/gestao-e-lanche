@@ -15,7 +15,7 @@ function ErrorPopup(props: any) {
                     (<span className="text-light"> Usuário {props.user} Logado! </span>)}                    
                 </Toast.Body>
             </Toast>
-        </ToastContainer>    
+        </ToastContainer>
     )
 }
 

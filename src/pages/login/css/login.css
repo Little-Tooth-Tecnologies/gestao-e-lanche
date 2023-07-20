@@ -107,12 +107,6 @@
     gap: 1.5rem;
 }
 
-.input>input:focus::placeholder{
-    transform: translateX(0.5rem);
-    transition: 0.5s;
-}
-
-
 .icone{
     font-size: 1.5rem;
     position: absolute;
@@ -139,7 +133,7 @@
 }
 
 .titleDiv{
-    margin-top: 5rem;
+    margin-top: 6rem;
 }
 
 .titleDiv>h1{
@@ -172,9 +166,10 @@
 }
 
 .iconV{
-    font-size: 1.5rem;
-    position: absolute;
-    margin: 0.4rem;
+    font-size: 1.4rem;
+    /* position: absolute; */
+    margin-right: 0.4rem;
+    margin-bottom: 0.3rem;
     color: #3C4C3B;
     opacity: 0.6;
 }
@@ -192,14 +187,22 @@
     font-size: 0.98rem;
 }
 
+.tinyFDB{
+    font-size: 0.8rem;
+}
+
 /* Btn */
-.btnBG{background-color: #C4D7B2; transition: 0.5s; width: 5rem;}
-.btnBG:hover{background-color: #D6FCB2; color: #3C4C3B; scale: 1.1;}
+.btnBG{background-color: #C4D7B2; transition: 0.5s;}
+.btnBG:hover{background-color: #D6FCB2; color: #3C4C3B;}
 
 .btn-end{
     display: flex;
     justify-content: end;
     align-items: end;    
+}
+
+.btnVar{
+    padding-left: 0.5rem;
 }
 
 /* Cores */

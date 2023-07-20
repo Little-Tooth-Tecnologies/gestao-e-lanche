@@ -3,13 +3,90 @@ import { MdPeople } from "react-icons/md"
 import { HiOutlineMail } from "react-icons/hi"
 import LogoComponent from "../login/components/LogoComponent"
 import { Link } from "react-router-dom"
-import { Accordion, Modal } from "react-bootstrap"
-import { useState } from "react"
+import { Accordion, Button, Form, Modal, ProgressBar } from "react-bootstrap"
+import { useEffect, useState } from "react"
 
 function Register() {
 
   const [openTerms, setOpenTerms] = useState(false)
   const [openPrivacy, setOpenPrivacy] = useState(false)
+  const [isLoading, setLoading] = useState(false);
+  const [password, setPassword] = useState('')
+  const [strength, setStrength] = useState(0)
+
+// Atenção, isso será passado para um arquivo utilitário "loginUtils.ts"
+// Apenas para Funções de Debug
+  useEffect(() => {
+    function simulateNetworkRequest() {return new Promise((resolve) => setTimeout(resolve, 2000));}
+
+    if (isLoading) {
+      simulateNetworkRequest().then(() => {
+        setLoading(false);
+      });
+    }
+  }, [isLoading]);
+
+  const handleClick = () => setLoading(true);
+
+  const handleSenha = (pass: any) => {
+    const newPassword = pass.target.value;
+    setPassword(newPassword);
+    setStrength(calculateStrenght(newPassword))
+  }
+
+  const calculateStrenght = (pass: any) => {
+    let strenght = 0;
+    const regexLowerCase = new RegExp('^(?=.*[a-z])')
+    const regexUpperCase = new RegExp('^(?=.*[A-Z])')
+    const regexNumber = new RegExp('^(?=.*[0-9])')
+    const regexSpecial = new RegExp('^(?=.*[!@#$%^&*])')
+
+    if (pass.lenght >= 8 ) {
+      strenght += 25      
+    }
+
+    if (regexLowerCase.test(pass)) {
+      strenght += 25
+    }
+
+    if (regexUpperCase.test(pass)) {
+      strenght += 25
+    }
+
+    if (regexNumber.test(pass)) {
+      strenght += 25
+    }
+
+    if (regexSpecial.test(pass)) {
+      strenght += 25
+    }
+
+    return strenght;    
+  }
+
+  const getPasswordStrengthLabel = (strenght: any) => {
+    if (strenght >= 75) {
+      return String ('Forte');
+    } else if (strenght >= 50) {
+      return String ('Média');
+    } else if (strenght >= 25) {
+      return String ('Fraca');
+    } else {
+      return String ('Muito Fraca');
+    }
+  };
+
+  const getPasswordStrengthColor = (strenght: any) => {
+    if (strenght >= 75) {
+      return String ('success');
+    } else if (strenght >= 50) {
+      return String ('warning');
+    } else if (strenght >= 25) {
+      return String ('danger');
+    } else {
+      return String ('light');
+    }
+  };  
 
   return (
 <section className='ModalI'>
@@ -19,60 +96,85 @@ function Register() {
           <article className="container">
             <div className="user-select-none text-center titleDiv">
               <h1 className="titulo text-light"> Tela de Cadastro </h1>
-              <span className="text-light subtitulo"> Gestão & Lanche</span> <br/>
-              <span className="text-light subtitulo"> (Aqui você digita seus Dados para acessar o sistema) </span>
+              <span className="text-light subtitulo"> Gestão & Lanche</span> <br/>              
               <hr className="linhaDetalhe"/>
             </div>            
-            <form className="form">
-
+            <Form validated className="form" onSubmit={handleClick}>
+              
               <article className="inputArticle">
-              <div className="inputsDivs input">
-                <label htmlFor="email"><HiOutlineMail className="iconV"/></label>
-                <input type="email" className="form-control" placeholder="Email" name="email" id="email" required/> 
-              </div>
-              <div className="inputsDivs input">
-                <label htmlFor="senha"><BiLock className="iconV"/></label>
-                <input type="password" className="form-control" placeholder="Senha" name="password" id="password" required/>
-              </div>              
+              <Form.Group className="inputsDivs input" controlId="Email">
+                <Form.Floating>
+                  <Form.Control required type="email"  placeholder='Email'/>
+                  <Form.Label><HiOutlineMail className='iconV'/><span className="text-muted">Email</span></Form.Label>
+                  <Form.Control.Feedback type="invalid" className='tinyFDB'> Precisa conter um Email válido </Form.Control.Feedback>
+                </Form.Floating>
+              </Form.Group>
+              <Form.Group className="inputsDivs input" controlId="Password">
+                <Form.Floating>
+                  <Form.Control required type="password" placeholder="Senha" value={password} onChange={handleSenha} minLength={10} maxLength={30} />
+                  <Form.Label><BiLock className='iconV'/><span className="text-muted">Senha</span></Form.Label>
+                  <ProgressBar now={strength} label={`${getPasswordStrengthLabel(strength)}`} 
+                  variant={getPasswordStrengthColor(strength)}
+                  className="mt-2"
+                  striped
+                  animated
+                  />                  
+                  <Form.Control.Feedback type="invalid" className='tinyFDB'>
+                    Precisa Conter:
+                    <ul>
+                      <li>Caractere Maiusculo</li>
+                      <li>Caractere Minusculo</li>
+                      <li>Caractere Especial</li>
+                      <li>Número</li>
+                    </ul>
+                  </Form.Control.Feedback>                  
+                </Form.Floating>
+              </Form.Group>              
               </article>
 
               <article className="inputArticle">
-              <div className="inputsDivs input">
-                <label htmlFor="name"><MdPeople className="iconV"/></label>
-                <input type="text" className="form-control" placeholder="Nome" name="name" id="name" required/>
-              </div>
+              <Form.Group className="inputsDivs input" controlId="Name">
+                <Form.Floating>
+                  <Form.Control required type="text" placeholder="Nome"/>
+                  <Form.Label><MdPeople className="iconV"/><span className="text-muted">Nome</span></Form.Label>
+                  <Form.Control.Feedback type="invalid" className='tinyFDB'> Não pode estar vazio </Form.Control.Feedback>
+                </Form.Floating>
+              </Form.Group>
 
-              <div className="inputsDivs input">
-                <label htmlFor="surname"><MdPeople className="iconV"/></label>
-                <input type="text" className="form-control" placeholder="Sobrenome" name="surname" id="surname" required/>                
-              </div>
+              <Form.Group className="inputsDivs input" controlId="Surname">
+                <Form.Floating>
+                  <Form.Control required type="text" placeholder="Sobrenome" />
+                  <Form.Label><MdPeople className="iconV"/><span className="text-muted"> Sobre Nome</span></Form.Label>
+                  <Form.Control.Feedback type="invalid" className='tinyFDB'> Não pode estar vazio </Form.Control.Feedback>
+                </Form.Floating>
+              </Form.Group>
               </article>
 
-              <article className="inputArticle">
               
-                            
-
-              </article>
-
-              
-              <div className="inputCenter">
-                
-                <label className="text-light"> Eu que li e aceito os 
-                {ModalTerms()};
-                <br/> Concordo com a {ModalPrivacy()} = </label>
-                <input type="checkbox" className="btn btn-outline-light ms-2 mt-4" required/>
-              </div>
+              <Form.Group className="inputCenter" controlId="checkTermos">
+                <Form.Label className="text-light"> Eu que li e aceito os {ModalTerms()};
+                <br/> Concordo com a {ModalPrivacy()} = </Form.Label>
+                <Form.Check type="checkbox" className="ms-2 mt-4" required/>
+              </Form.Group>
               
 
-                <div className="RowIconsV">
-                  <button type='reset' className="btn btnBG p-2">Limpar</button>
-                  <button type='submit' className="btn btnBG p-2">Cadastrar</button>              
-                </div>
+                <Form.Group className="RowIconsV">
+                  <Button 
+                  type='reset' 
+                  variant='outline-light'
+                  >Limpar</Button>
+                  <Button 
+                  type='submit' 
+                  variant='light' 
+                  className='btnBG' 
+                  disabled={isLoading}                   
+                  >{isLoading? 'Carregando...' : 'Cadastrar'}</Button>
+                </Form.Group>
 
               <div className="text-center">
                 <Link to='/Login' className="text-light"> Já tenho uma Conta </Link>
               </div>
-            </form>
+            </Form>
           </article>          
         </article>      
       </section> 
