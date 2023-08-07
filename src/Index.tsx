@@ -8,8 +8,8 @@ function Index() {
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(true);
+  const timeout = setTimeout(() => {
+      setIsLoading(false);
     }, 2500)
 
     return () => { 
@@ -17,7 +17,7 @@ function Index() {
     }  
     
   }, []);
-
+ 
   useEffect(() => {
     if(!isLoading) {
       navigate('/login')
@@ -27,8 +27,8 @@ function Index() {
   return (
     <>
     {isLoading ? ( 
-      <article className='bg-fundos-escuro text-texto-white w-36'>
-        <div className='m-5 pt-4 flex-col text-center'>
+      <article className='flex justify-center items-center content-center mt-48 select-none'>
+        <div className='m-5 pt-4 flex-col bg-fundos-escuro text-texto-white w-52 rounded text-center scale-150'>
           <h1 className='mb-4'>Carregando...</h1>
           <CircularProgress className='mb-4'/>
         </div>
@@ -40,7 +40,6 @@ function Index() {
     )}
     </>
   );
-
-};
+}
 
 export default Index
