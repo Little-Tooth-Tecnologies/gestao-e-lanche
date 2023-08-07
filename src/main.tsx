@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Routes from './utils/routes'
 
+// Estilos Globais
 import './assets/css/global/style.css'
 
 

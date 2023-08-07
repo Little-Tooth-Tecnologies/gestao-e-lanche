@@ -2,6 +2,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Login from '../pages/login/Login.tsx'
 import Register from '../pages/register/Register.tsx'
+import FirstAccess from "../pages/firstAccess/FirstAccess.tsx";
+import ForgotPassword from "../pages/forgotPassword/ForgotPassword.tsx";
+
 
 import Index from "../Index.tsx";
 
@@ -9,7 +12,11 @@ const router = createBrowserRouter([
 {
     path: '/',
     element: <Index/>,
-    children: [
+    children: [    
+        {
+            path: '/First-Access',
+            element: <FirstAccess/>,
+        },    
         {
             path: '/Login',
             element: <Login/>,
@@ -17,6 +24,10 @@ const router = createBrowserRouter([
         {
             path: '/Cadastro',
             element: <Register/>,
+        },
+        {
+            path: '/Esqueci-Senha',
+            element: <ForgotPassword/>,
         }
     ]
 }

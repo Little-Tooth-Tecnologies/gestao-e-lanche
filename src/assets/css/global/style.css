@@ -6,7 +6,7 @@
 
 
 *{
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 body{
@@ -14,6 +14,8 @@ body{
     background-size: cover;
 }
 
-.titulo{font-family: "Raleway" , sans-serif;}
-.subtitulo{font-family: 'Roboto', sans-serif;}
-.paragrafo{font-family: 'Roboto Flex', sans-serif;}
+.transparence{
+    border-radius: 19px;
+    background: linear-gradient(0deg, rgba(146, 219, 127, 0.43) 0%, rgba(146, 219, 127, 0.43) 100%), rgba(60, 76, 59, 0.85);
+    box-shadow: 11px 14px 4px -3px rgba(0, 0, 0, 0.55);
+}

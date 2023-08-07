@@ -20,7 +20,7 @@ function Index() {
  
   useEffect(() => {
     if(!isLoading) {
-      navigate('/login')
+      navigate('/First-Access');      
     }
   }, [isLoading, navigate]);
 
@@ -28,7 +28,7 @@ function Index() {
     <>
     {isLoading ? ( 
       <article className='flex justify-center items-center content-center mt-48 select-none'>
-        <div className='m-5 pt-4 flex-col bg-fundos-escuro text-texto-white w-52 rounded text-center scale-150'>
+        <div className='m-5 pt-4 flex-col transparence text-texto-white w-52 rounded text-center scale-150'>
           <h1 className='mb-4'>Carregando...</h1>
           <CircularProgress className='mb-4'/>
         </div>
