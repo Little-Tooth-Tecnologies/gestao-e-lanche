@@ -1,6 +1,12 @@
 # Gestão & Lanche
 Sistema de Gerenciamento para Pequenos Negócios e Delivery's 📊🍔🚚
 
+<div>
+  [![React](https://img.shields.io/badge/Front--end-React-blue)](https://reactjs.org/)
+  [![TypeScript](https://img.shields.io/badge/Front--end-TypeScript-blue)](https://www.typescriptlang.org/)
+  [![MySQL](https://img.shields.io/badge/Banco%20de%20Dados-MySQL-blue)](https://www.mysql.com/)
+</div>
+
 O objetivo deste projeto é desenvolver um sistema de gerenciamento abrangente para pequenos negócios e estabelecimentos de delivery, permitindo que eles administrem eficientemente suas operações diárias. O sistema será dividido em dois componentes principais: o **front-end** e o **back-end**, com uma estrutura de banco de dados para armazenamento dos dados.
 
 
