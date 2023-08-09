@@ -1,5 +1,6 @@
 import { InputAdornment, Select } from "@mui/material"
-import { AiOutlineUser, AiOutlineUnlock } from "react-icons/ai"
+import { AiOutlineUser, AiOutlineUnlock , AiOutlineRight, AiOutlineMail} from "react-icons/ai"
+import { FiSearch } from "react-icons/fi"
 
 export function UserAdornment() {
     return(
@@ -13,6 +14,30 @@ export function PasswordAdornment() {
     return (
         <InputAdornment position="start">
             <AiOutlineUnlock/>    
+        </InputAdornment>
+    )
+}
+
+export function CommonAdornment() {
+    return (
+        <InputAdornment position="start">
+            <AiOutlineRight/>
+        </InputAdornment>
+    )
+}
+
+export function EmailAdornment() {
+    return (
+        <InputAdornment position="start">
+            <AiOutlineMail/>
+        </InputAdornment>
+    )
+}
+
+export function SearchAdornment() {
+    return (
+        <InputAdornment position="start">
+            <FiSearch/>
         </InputAdornment>
     )
 }
@@ -31,3 +56,4 @@ export function RoleAdornment() {
         </InputAdornment>
     )
 }
+

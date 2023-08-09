@@ -7,7 +7,7 @@ function Register() {
   return (
     <section className="flex select-none justify-around">
         <BackButton/>
-      <article className="flex justify-center transparence mt-24">
+      <article className="flex justify-center transparence mt-28">
         <div>
           <LogoComponent/>
         </div>        

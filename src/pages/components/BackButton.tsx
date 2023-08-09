@@ -1,4 +1,4 @@
-import { BiArrowBack } from "react-icons/bi"
+import { AiOutlineArrowLeft } from "react-icons/ai"
 import { IconButton, Tooltip } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 
@@ -17,7 +17,7 @@ function BackButton() {
             <Tooltip title="Voltar" arrow>
                 <IconButton>                    
                     <div className="text-texto-white text-4xl" onClick={HandleBack}>
-                        <BiArrowBack/>                    
+                        <AiOutlineArrowLeft/>                    
                     </div>
                 </IconButton>
             </Tooltip>

@@ -5,12 +5,12 @@ import { CircularProgress } from '@mui/material';
 function Index() {  
 
   const navigate = useNavigate()
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   
   useEffect(() => {
   const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 2500)
+    }, 100)
 
     return () => { 
       clearTimeout(timeout);
@@ -29,7 +29,7 @@ function Index() {
     {isLoading ? ( 
       <article className='flex justify-center items-center content-center mt-48 select-none'>
         <div className='m-5 pt-4 flex-col transparence text-texto-white w-52 rounded text-center scale-150'>
-          <h1 className='mb-4'>Carregando...</h1>
+          <h1 className='mb-4 font-body'>Carregando...</h1>
           <CircularProgress className='mb-4'/>
         </div>
       </article>
