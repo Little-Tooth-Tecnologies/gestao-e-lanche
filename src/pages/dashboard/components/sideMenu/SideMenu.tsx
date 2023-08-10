@@ -14,7 +14,7 @@ function SideMenu() {
 
     
   return (    
-    <section className="bg-fundos-escuro flex">
+    <section className="bg-fundos-escuro flex w-60">
         <Toolbar>                            
         <List className="text-texto-white">
             <div className="flex justify-between">

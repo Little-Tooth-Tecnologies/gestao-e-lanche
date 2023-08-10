@@ -4,13 +4,15 @@ import { Outlet } from "react-router-dom"
 
 function Dashboard() {
     return (
-        <section className="transparenceNoBorder m-10">            
-            <article className="flex flex-col">
+        <section className="transparenceNoBorder m-8">            
+            <article className="fle flex-col">
                 <div className="flex flex-row">
                     <SideMenu/>
-                    <NavMenu/>                
-                </div>                
-                    <Outlet/>
+                    <div className="w-full">
+                        <NavMenu/>
+                        <Outlet/>
+                    </div>
+                </div>
             </article>            
         </section>
     )

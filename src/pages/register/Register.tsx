@@ -12,8 +12,8 @@ function Register() {
           <LogoComponent/>
         </div>        
         <div className="text-texto-white text-center flex-fol m-5">
-          <h1 className="text-3xl"> Tela de Cadastro </h1>
-          <h3 className="text-slate-300"> Gestão & Lanche </h3>
+          <h1 className="text-3xl font-title"> Tela de Cadastro </h1>
+          <h3 className="text-slate-300 font-body"> Gestão & Lanche </h3>
             <hr className="mt-2"/>
             <FormRegister/>            
         </div>

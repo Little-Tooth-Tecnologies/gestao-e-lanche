@@ -11,8 +11,8 @@ function ForgotPassword() {
           <LogoComponent/>
         </div>
         <div className="text-texto-white text-center flex-fol m-5">
-          <h1 className="text-3xl">Recuperação de Senha </h1>
-          <h3 className="text-slate-300"> Gestão & Lanche </h3>
+          <h1 className="text-3xl font-title">Recuperação de Senha </h1>
+          <h3 className="text-slate-300 font-body"> Gestão & Lanche </h3>
             <hr className="mt-2"/>
             <FormForgotPassword/>
         </div>
